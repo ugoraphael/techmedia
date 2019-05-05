@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ADMIN-TECHMEDIA</title>
+    <title>ADMIN-TECHMEDIAqwerty</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
