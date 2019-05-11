@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStartUpsTable extends Migration
+class CreateStartUpCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class CreateStartUpsTable extends Migration
      */
     public function up()
     {
-        Schema::create('start_ups', function (Blueprint $table) {
+        Schema::create('start_up_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->string('slug')->nullable();
-            $table->text('content');
-            $table->text('photo')->nullable();
-            $table->text('tags')->nullable();
-            $table->integer('startUp_category_id')->unsigned()->index()->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +27,6 @@ class CreateStartUpsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('start_ups');
+        Schema::dropIfExists('start_up_categories');
     }
 }
