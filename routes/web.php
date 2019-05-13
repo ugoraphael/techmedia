@@ -36,3 +36,17 @@ Route::post('/admin/techPosts/create','TechPostsController@store')->name('admin.
 Route::get('/admin/techPosts/edit/{id}', 'TechPostsController@edit')->name('admin.techPosts.edit');
 Route::post('/admin/techPosts/update/{id}', 'TechPostsController@update')->name('admin.techPosts.update');
 Route::delete('/admin/techPosts/delete/{id}', 'TechPostsController@destroy')->name('admin.techPosts.destroy');
+
+
+
+
+
+//START UPs SECTION
+Route::get('/admin/startUps/index', 'StartUpPostsController@index')->name('admin.startUps.index');
+Route::get('/admin/startUps/create', 'StartUpPostsController@create')->name('admin.startUps.create');
+
+Route::post('/admin/startUps/create','StartUpPostsController@store')->name('admin.startUps.store');
+
+Route::get('/admin/startUps/edit/{id}', 'StartUpPostsController@edit')->name('admin.startUps.edit');
+Route::post('/admin/startUps/update/{id}', 'StartUpPostsController@update')->name('admin.startUps.update');
+Route::delete('/admin/startUps/delete/{id}', 'StartUpPostsController@destroy')->name('admin.techPosts.destroy');

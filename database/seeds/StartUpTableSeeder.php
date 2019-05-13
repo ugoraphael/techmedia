@@ -19,7 +19,7 @@ class StartUpTableSeeder extends Seeder
             'content' => 'This idea is best to cut down the effect of global warming in our already wanning environment',
             'photo' => 'noimage.jpg',
             'tags' => 'Germany, cable, technology, startups, global warming',
-            'startUp_category_id' => 1,
+            'start_up_category_id' => 1,
 
         ]);
 
@@ -29,7 +29,7 @@ class StartUpTableSeeder extends Seeder
             'content' => 'This idea is best to cut down the effect of global warming in our already wanning environment',
             'photo' => 'noimage.jpg',
             'tags' => 'Germany, cable, technology, startups, global warming',
-            'startUp_category_id' => 2,
+            'start_up_category_id' => 2,
 
         ]);
 
@@ -39,7 +39,7 @@ class StartUpTableSeeder extends Seeder
             'content' => 'This idea is best to cut down the effect of global warming in our already wanning environment',
             'photo' => 'noimage.jpg',
             'tags' => 'Germany, cable, technology, startups, global warming',
-            'startUp_category_id' => 3,
+            'start_up_category_id' => 3,
 
         ]);
 
@@ -49,7 +49,7 @@ class StartUpTableSeeder extends Seeder
             'content' => 'This idea is best to cut down the effect of global warming in our already wanning environment',
             'photo' => 'noimage.jpg',
             'tags' => 'Germany, cable, technology, startups, global warming',
-            'startUp_category_id' => 1,
+            'start_up_category_id' => 1,
 
         ]);
 
@@ -59,7 +59,7 @@ class StartUpTableSeeder extends Seeder
             'content' => 'This idea is best to cut down the effect of global warming in our already wanning environment',
             'photo' => 'noimage.jpg',
             'tags' => 'Germany, cable, technology, startups, global warming',
-            'startUp_category_id' => 4,
+            'start_up_category_id' => 4,
 
         ]);
     }

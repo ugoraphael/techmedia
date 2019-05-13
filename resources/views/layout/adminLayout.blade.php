@@ -173,6 +173,18 @@
                         </ul>
                     </li>
 
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-arrows-v"></i> START_UPs <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo1" class="collapse">
+                            <li>
+                                <a href="{{route('admin.startUps.index')}}">ALL StartUp Posts</a>
+                            </li>
+                            <li>
+                                <a href="{{route('admin.startUps.create')}}">CREATE POST</a>
+                            </li>
+                        </ul>
+                        </li>
+
 
                     <li>
                         <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
@@ -264,6 +276,33 @@
     <!-- /#wrapper -->
 
 
+    {{-- delete_modal --}}
+    <div id="DeleteModal" class="modal fade text-danger" role="dialog">
+            <div class="modal-dialog ">
+              <!-- Modal content-->
+              <form action="" id="deleteForm" method="post">
+                  <div class="modal-content">
+                      <div class="modal-header bg-danger">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title text-center">DELETE CONFIRMATION</h4>
+                      </div>
+                      <div class="modal-body">
+                          {{ csrf_field() }}
+                          {{ method_field('DELETE') }}
+                          <p class="text-center">Are you sure you want to do this?</p>
+                      </div>
+                      <div class="modal-footer">
+                          <center>
+                              <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
+                              <button type="submit" name="" class="btn btn-danger" data-dismiss="modal" onclick="formSubmit()">Yes, Confirm</button>
+                          </center>
+                      </div>
+                  </div>
+              </form>
+            </div>
+           </div>
+
+
 
 
 
@@ -274,14 +313,29 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="/assets/js/bootstrap.min.js"></script>
 
-    <script>
-    //tis fxn was called in the admin index table section
-    function deleteFunction() {
-        
-         return confirm("Are you sure you want to delete this item?");
-         
-      }
-    </script>
+    <script type="text/javascript">
+    //the btn outside the index.php is calling this fxn.
+        function deleteData(id)
+        {
+            //now store a fake id that can relate with our incoming parameter_id.
+            //this variable is needed to form our route url, and later replaced with that parameter_id
+            var id = id;
+
+        //the modal form action attr is empty for a reason. 
+        //Now we can replace with the required route, so dat it can delete for us
+            var url = '{{ route("admin.techPosts.destroy", ":id") }}';
+            url = url.replace(':id', id);
+
+            //replace the action attr in the modal form, with the url above.
+            $("#deleteForm").attr('action', url);
+        }
+   
+        function formSubmit()
+        {
+            //the final modal delete btn will just submit the modal form, which is already carrying a delete route action
+            $("#deleteForm").submit();
+        }
+     </script>
 
 </body>
 

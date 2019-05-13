@@ -2,10 +2,10 @@
 
 @section('content')
 
-    <h1>ADMIN TECH POSTS</h1>
+    <h1>ADMIN Start Ups</h1>
 
     <div class="add_user">
-            <a href="{{route('admin.techPosts.create')}}">ADD POSTS</a>
+            <a href="{{route('admin.startUps.create')}}">ADD Start Ups</a>
     </div>
   
     <div class="table_section">
@@ -25,21 +25,21 @@
                     </thead>
                     <tbody>
 
-                     @foreach($techPosts as $techPost)
+                     @foreach($startUps as $startUp)
                         <tr>
-                            <td><?php echo $techPost->id; ?></td>
-                            <td><?php echo $techPost->title; ?>
+                            <td><?php echo $startUp->id; ?></td>
+                            <td><?php echo $startUp->title; ?>
                                 
                              <div class="action_links">
 
-                                {{-- <form accept-charset="UTF-8" action="{{route('admin.techPosts.destroy', $techPost->id)}}" method="POST" class="pull-right">
+                                {{-- <form accept-charset="UTF-8" action="{{route('admin.startUps.destroy', $startUp->id)}}" method="POST" class="pull-right">
                                     @csrf
                                     <input id="delbtn" class="delete_link btn btn-danger confirm" type="submit" value="Delete">
                                     <input name="_method" type="hidden" value="DELETE">
                                 </form> --}}
 
                                 {{-- using modal delete confirmation. the modal is in adminLayout.blade.php --}}
-                                <a href="javascript:;" data-toggle="modal" onclick="deleteData({{$techPost->id}})" 
+                                <a href="javascript:;" data-toggle="modal" onclick="deleteData({{$startUp->id}})" 
                                         data-target="#DeleteModal" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Delete</a>
 
                                 {{-- the code above begets this in viewSource or inspectElement --}}
@@ -49,9 +49,9 @@
                                     <input name="_method" type="hidden" value="DELETE">
                                  </form> --}}
                                         
-                                {{-- <a href="{{route('admin.techPosts.destroy', $techPost->id)}}">Delete</a> --}}
+                                {{-- <a href="{{route('admin.startUps.destroy', $startUp->id)}}">Delete</a> --}}
 
-                                <a href="{{route('admin.techPosts.edit', $techPost->id)}}">Edit</a>
+                                <a href="{{route('admin.startUps.edit', $startUp->id)}}">Edit</a>
                                 <!-- <a href="../post.php?id=<?php //echo $post->id; ?>">View</a> -->
 
                             </div>
@@ -60,18 +60,18 @@
 
                             
 
-                            <td><img width='50' src="/storage/imagesFolder/{{$techPost->photo}}"> </td>
-                            <td><?php echo $techPost->content; ?></td>
+                            <td><img width='50' src="/storage/imagesFolder/{{$startUp->photo}}"> </td>
+                            <td><?php echo $startUp->content; ?></td>
 
                             <td>
                                 {{-- using our relationship model to inter-loop thru different tables --}}
-                                {{ $techPost->tech_category ? $techPost->tech_category->title : 'No Category' }}    
+                                {{ $startUp->start_up_category ? $startUp->start_up_category->title : 'No Category' }}    
                                     
                             </td>
 
-                            <td><?php echo $techPost->tags; ?></td>
+                            <td><?php echo $startUp->tags; ?></td>
 
-                            <td><?php echo $techPost->created_at; ?></td>
+                            <td><?php echo $startUp->created_at; ?></td>
                             
                         </tr>
                     @endforeach

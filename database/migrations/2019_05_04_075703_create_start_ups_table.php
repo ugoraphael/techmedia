@@ -20,7 +20,7 @@ class CreateStartUpsTable extends Migration
             $table->text('content');
             $table->text('photo')->nullable();
             $table->text('tags')->nullable();
-            $table->integer('startUp_category_id')->unsigned()->index()->nullable();
+            $table->integer('start_up_category_id')->unsigned()->index()->nullable();
             $table->timestamps();
         });
     }

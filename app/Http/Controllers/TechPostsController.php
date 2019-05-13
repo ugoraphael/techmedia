@@ -182,6 +182,8 @@ class TechPostsController extends Controller
         $techPost->save();
 
         return redirect('/admin/techPosts/index')->with('success', 'Post EDITED SUCCESSFULLY');
+
+        
     }
 
 
